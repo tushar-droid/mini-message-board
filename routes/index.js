@@ -6,23 +6,23 @@ var router = express.Router();
 const messages = [
   {
     text: "the job market is horrible right now!",
-    user: "me",
+    user: "dev",
     added: new Date(),
   },
   {
     text: "Hope i will land a job soon",
-    user: "me",
+    user: "user",
     added: new Date(),
   },
 
 ]
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Drop your thoughts about the current web dev job market', messages: messages });
+  res.render('index', { title: 'Thoughts board', heading: 'Drop your thoughts about the current web dev job market or general thoughts', messages: messages });
 });
 
 router.get('/new', function(req, res){
-  res.render('form')
+  res.render('form', {title: 'New message'})
 })
 
 router.post('/new', function(req, res){
