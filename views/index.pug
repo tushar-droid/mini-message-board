@@ -2,4 +2,11 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  a(href="/new")
+    button(class='new-msg-btn' href="/new") Add message
+  ul(class='messages-list')
+    each val, index in  messages
+      li(class='message-block')
+        h2 #{val.text} 
+        p(class='username') #{val.user} 
+        p(class='date-added') #{val.added}

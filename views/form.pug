@@ -1,0 +1,6 @@
+extends layout 
+block content
+    form(action="/new" method="POST" class="new-msg-form")
+        textarea(class="input-box-msg", placeholder="Input your message" name='newMessage' required)
+        input(type="text" class="input-box-name" placeholder="author name" name='newAuthor' required)
+        button(class='submit-btn') Submit 
